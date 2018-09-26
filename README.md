@@ -24,3 +24,4 @@ Info about processed files will be saved in json file at the moment when file is
 * ~~catch ctrl+c if someone will stop program~~
 * connection to http endpoint using certificates
 * put everything together
+* make zip module that can be used without install on windows/linux environment
