@@ -1,5 +1,5 @@
 import json
-from datetime import datetime
+import os
 
 
 class Serializer():
@@ -8,6 +8,9 @@ class Serializer():
         self.data = dict()
 
     def load(self):
+        if not os.path.isfile(self.filename):
+            return
+
         with open(self.filename, "r") as f:
             self.data = json.load(f)
 
@@ -31,7 +34,7 @@ class Serializer():
     def set_access_time(self, filename, access_time):
         if filename not in self.data:
             self.data[filename] = dict()
-        self.data[filename]["access_time"] = access_time.timestamp()
+        self.data[filename]["access_time"] = access_time
 
     def get_access_time(self, filename):
         access_time = 0
@@ -39,4 +42,4 @@ class Serializer():
             access_time = self.data[filename]["access_time"]
         except KeyError:
             pass
-        return datetime.fromtimestamp(access_time)
+        return access_time
