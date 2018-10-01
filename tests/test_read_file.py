@@ -1,4 +1,4 @@
-from file_reader import get_line, get_files_list
+from contrib.reader import get_line, get_files_list
 import os
 
 
@@ -15,11 +15,11 @@ def test_get_line_unix(tmpdir):
 
 def test_get_file_list(tmpdir):
     correct_files = (
-            "test1",
-            "test2",
-            "test3",
+        "test1",
+        "test2",
+        "test3",
 
-            )
+    )
 
     incorrect_files = ("teest", "est3")
     list(tmpdir.join(

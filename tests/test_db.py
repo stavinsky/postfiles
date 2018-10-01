@@ -1,4 +1,4 @@
-from db import Serializer
+from contrib.db import Serializer
 from datetime import datetime
 import os
 
